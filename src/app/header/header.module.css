@@ -22,8 +22,10 @@
     position: fixed;
     height: auto;
     overflow: hidden;
-    margin: 10px auto;
     width: 95%;
+    margin: 10px auto;
+    left: 0;
+    right: 0;
     border-radius: 20px;
     transition: all 0.3s ease;
 }

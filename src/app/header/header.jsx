@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Style from './header.module.css'
 
 import InputLabel from '@mui/material/InputLabel';
@@ -44,6 +44,15 @@ const {t, i18n} = useTranslation();
 const theme = useTheme();
 const {WebsiteTheme, setWebsiteTheme} = useContext(ThemeContext);
 const [NavOpen, setNavOpen] = useState(false);
+
+useEffect(() => {
+  if(NavOpen){
+    document.body.style.overflow = "hidden";
+  }else{
+    document.body.style.overflow = "auto";
+  }
+}, [NavOpen])
+
 const navHandle = NavValue.map((item) => {
     return(
      <li key={item.id}>
