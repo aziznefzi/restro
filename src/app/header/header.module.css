@@ -1,0 +1,613 @@
+
+.header {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0.4rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.header .iconNav{
+    display: none;
+}
+
+.mobileNav{
+    display: none;
+    position: fixed;
+    height: auto;
+    overflow: hidden;
+    margin: 10px auto;
+    width: 95%;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.mobileNav.dark {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    box-shadow: 0 4px 20px rgba(139, 0, 0, 0.4), 0 0 10px rgba(255, 171, 0, 0.2);
+    border: 1px solid rgba(255, 171, 0, 0.1);
+}
+
+.mobileNav.light {
+    background: linear-gradient(145deg, #ffffff, #fffdf5);
+    box-shadow: 0 20px 50px rgba(139, 0, 0, 0.25), 0 5px 25px rgba(255, 171, 0, 0.35);
+    border: 1.5px solid rgba(255, 171, 0, 0.3);
+}
+
+.header .menuIcon{
+    cursor: pointer;
+    display: none;
+}
+
+/* Dark Mode Styles */
+.header.dark{
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 60%, rgba(74, 4, 4, 0.9) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header.dark .nav a {
+    color: var(--color3);
+}
+
+/* Light Mode Styles */
+.header.light {
+    background-color: #fffdf5;
+    border-bottom: 2px solid rgba(255, 171, 0, 0.3);
+    box-shadow: 0 12px 40px rgba(139, 0, 0, 0.2), 0 5px 20px rgba(255, 171, 0, 0.3);
+}
+
+.header.light .nav a {
+    color: var(--color1);
+}
+
+.header .nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.header .arrowIcon{
+    display: none;
+}
+
+.header .nav a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.header .nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color4);
+    transition: width 0.3s ease;
+}
+
+.header .nav a:hover {
+    color: var(--color4) !important;
+}
+
+.header .nav a:hover::after {
+    width: 100%;
+}
+
+.navItemContent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.iconSpan {
+    display: none; /* Hide in desktop */
+}
+
+.arrowIcon {
+    display: none; /* Hide in desktop */
+}
+
+.header .ButtonSection {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header .themeButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.header .themeButton:hover {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.header .themeButton svg {
+    font-size: 1.8rem;
+    color: var(--color4);
+}
+
+    .header button,
+    .mobileNav button{
+        background: linear-gradient(45deg, var(--color2), var(--color4));
+        color: white;
+        border: none;
+        padding: 0.6rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    .mobileNav button{
+        margin: auto;
+        width: 50%;
+    }
+
+.header button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 171, 0, 0.4);
+    filter: brightness(1.1);
+}
+
+.header button:active {
+    transform: translateY(0);
+}
+
+/* MUI Customization (Optional depending on how deep you want to go) */
+.LangSection {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Custom Dropdown Styles */
+.selectContainer {
+    position: relative;
+    width: 140px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.customSelectDisplay {
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgb(255, 170, 0);
+    border-radius: 25px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: inherit; /* Text always visible normally */
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.header.light .customSelectDisplay{
+    border-color: var(--color2);
+}
+
+.selectContainer.active .customSelectDisplay {
+    color: transparent !important; /* Hide selected text when opening menu */
+    border-color: var(--color4);
+    box-shadow: 0 0 0 4px rgba(255, 171, 0, 0.1);
+}
+
+.header.light .selectContainer.active .customSelectDisplay {
+    border-color: var(--color2);
+}
+
+.selectLabel {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 3; /* Increased z-index to sit on top of border */
+    white-space: nowrap;
+    text-transform: capitalize;
+    padding: 0 4px; /* Reduced padding */
+    border-radius: 4px;
+}
+
+/* Active State (Simulating Focus) */
+.selectContainer.active .selectLabel {
+    display: block;
+    top: -12px; /* Move label up to border line */
+    transform: translate(-50%, 0) scale(0.85); /* Adjust transform */
+    font-size: 1rem;
+    color: var(--color4) !important;
+}
+
+.header.light .selectContainer.active .selectLabel {
+    color: var(--color2) !important;
+}
+
+.header.light .selectContainer.active .selectLabel {
+     background-color: #fffdf5; /* Match header bg */
+}
+.header.light.scrolled .selectContainer.active .selectLabel {
+     background-color: #ffffff; /* Match scrolled header bg */
+}
+
+.header.dark .selectContainer.active .selectLabel {
+     background-color: #0d0d0d; /* Match header bg */
+}
+.header.dark.scrolled .selectContainer.active .selectLabel {
+     background-color: #000; /* Match scrolled header bg */
+}
+
+.selectContainer.active .customSelectDisplay {
+    color: inherit;
+    border-color: var(--color4);
+    box-shadow: 0 0 0 4px rgba(255, 171, 0, 0.1);
+}
+
+/* Dropdown Menu */
+.dropdownMenu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+    z-index: 100;
+    border: 1px solid rgba(255,171,0,0.2);
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdownItem {
+    padding: 10px 13px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    color: var(--color2);
+}
+
+/* Light Mode Styles */
+.header.light .selectLabel {
+    color: var(--color1);
+}
+.header.light .selectContainer.active .selectLabel,
+.header.light .dropdownMenu {
+    background-color: #fffdf5;
+}
+.header.light .customSelectDisplay {
+    color: var(--color1);
+}
+.header.light .selectContainer.active .customSelectDisplay {
+    color: var(--color1);
+}
+
+.header.light .dropdownItem.selected {
+    background-color: rgb(139, 0, 0);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Light Mode Hover - Exclude Selected */
+.header.light .dropdownItem:not(.selected):hover {
+    background-color: rgba(139, 0, 0, 0.299);
+    color: var(--color1);
+}
+
+/* Dark Mode Styles */
+.header.dark .selectLabel {
+    color: var(--color3);
+}
+.header.dark .selectContainer.active .selectLabel,
+.header.dark .dropdownMenu {
+    background-color: #0d0d0d;
+    border-color: rgba(255,171,0,0.1);
+}
+.header.dark .customSelectDisplay {
+    color: var(--color3);
+}
+.header.dark .selectContainer.active .customSelectDisplay {
+    color: var(--color3);
+}
+.header.dark .dropdownItem {
+    color: var(--color3);
+}
+
+.header.dark .dropdownItem.selected {
+    background-color: rgba(255, 171, 0, 0.8); /* Gold with opacity */
+    color: rgba(0, 0, 0, 0.8); /* Dark text with opacity */
+    font-weight: 700;
+}
+.header.dark .dropdownItem:not(.selected):hover {
+    background-color: rgba(255, 170, 0, 0.082);
+}
+
+/* Custom Select Styles */
+.selectContainer {
+    position: relative;
+    width: auto;
+    min-width: 120px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    padding: 0 10px;
+}
+
+.customSelect {
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    border: 1.5px solid rgba(255, 171, 0, 0.4); /* Full border */
+    border-radius: 25px; /* Border radius */
+    padding: 0 1px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    text-align-last: center;
+    color: transparent;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.selectLabel {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: all 0.2sease-out;
+    z-index: 3;
+    white-space: nowrap;
+    text-transform: capitalize;
+    padding: 0 8px; /* Space for the cutout */
+    border-radius: 25px;
+}
+
+.selectBorder {
+    display: none; /* Removed bottom border animation */
+}
+
+/* Interaction States */
+.selectContainer:focus-within .selectLabel {
+    top: 0;
+    font-size: 0.75rem;
+    color: var(--color4) !important;
+}
+
+.selectContainer:focus-within .customSelect {
+    color: inherit;
+    border-color: var(--color4); /* Gold border on focus */
+    box-shadow: 0 0 0 4px rgba(255, 171, 0, 0.1);
+}
+
+/* Light Mode */
+.header.light .selectLabel {
+    color: var(--color1);
+}
+/* Light Mode - Reset Inactive Label Bg */
+.header.light .selectContainer:not(.active) .selectLabel {
+    background-color: transparent !important;
+}
+
+/* Dark Mode - Reset Inactive Label Bg */
+.header.dark .selectContainer:not(.active) .selectLabel {
+    background-color: transparent !important;
+}
+
+.header.dark .selectContainer:focus-within .customSelect {
+    color: var(--color3);
+}
+
+/* Options Styling */
+/* Options Styling */
+.customSelect option {
+    background-color: #fffdf5;
+    color: var(--color1);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Attempt to override default selection blue with theme colors */
+.customSelect option:checked,
+.customSelect option:hover {
+    box-shadow: 0 0 100px 100px var(--color4) inset !important; 
+    color: white !important;
+}
+
+.header.light .customSelect option:checked {
+    box-shadow: 0 0 100px 100px var(--color2) inset !important; /* Red for light mode */
+    color: white !important;
+}
+
+.header.dark .customSelect option {
+    background-color: #0d0d0d;
+    color: var(--color4); /* Gold text */
+}
+
+.header.dark .customSelect option:checked {
+    box-shadow: 0 0 100px 100px var(--color4) inset !important; /* Gold for dark mode */
+    color: #000 !important;
+}
+
+@media(max-width: 1157px){
+    /* Existing ... */
+    .header{
+        padding: 0.4rem 1rem;
+    }
+    .header .ButtonSection{
+        gap: 0.8rem;
+    }
+    .header .nav a {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    .header button {
+        background: linear-gradient(45deg, var(--color2), var(--color4));
+        padding: 0.5rem 1.4rem;
+        border-radius: 50px;
+        font-size: 0.7rem;
+    }
+    .header .themeButton svg {
+        font-size: 1.5rem;
+    }
+    .LangSection {
+        margin: 0;
+    }
+    
+    /* Responsive tweaks for Select */
+    .selectContainer {
+        height: 40px; /* Slightly more compact */
+    }
+    .customSelectDisplay {
+        font-size: 0.95rem; 
+    }
+}
+
+@media(max-width:950px){
+    /* Existing styles... */
+    .header{
+        padding: 0.5rem 2.3rem;
+    }
+    /* ... keep other 950px styles ... */
+    .header .nav{
+        display: none;
+    }
+    .header button{
+        display: none;
+    }
+    .header .iconNav{
+        display: block;
+    }
+
+    .header .iconNav{
+        color: var(--color4);
+    }
+    .header .ButtonSection{
+        gap: 1rem;
+    }
+    .LangSection {
+        margin: 0;
+    }
+    /* Add this for select spacing */
+    .selectContainer {
+        margin-right: 0;
+    }
+    
+    .mobileNav{
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    .mobileNav.dark ul li a { color: var(--color3); }
+    .mobileNav.light ul li a { color: var(--color1); }
+    .mobileNav ul li{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        margin: auto;
+    }
+    
+    .mobileNav ul li a{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 1rem;
+        color: unset;
+        border-radius: 20px;
+        border: 3px solid var(--color2);
+    }
+    .mobileNav ul li a:hover{
+        background: var(--color7);
+    }
+    .mobileNav .iconSpan {
+        display: flex;
+        align-items: center;
+        color: var(--color4);
+    }
+    .mobileNav .arrowIcon {
+        display: block;
+        font-size: 0.8rem;
+        opacity: 0.6;
+    }
+    .dropdownItem {
+    padding: 8px 10px;
+}
+}
+
+@media(max-width: 700px){
+   .mobileNav ul li{
+      width: 80%;
+    }
+    .selectContainer {
+        min-width: 110px;
+    }
+    .dropdownItem {
+    padding: 8px;
+}
+}
+
+@media(max-width: 450px){
+   .mobileNav ul li{
+        width: 90%;
+    }
+    .selectContainer {
+        min-width: 100px; /* Smaller min-width for mobile */
+        height: 40px; /* Slightly shorter */
+        margin-right: 10px;
+    }
+    .customSelectDisplay {
+        font-size: 0.9rem;
+        padding: 0 8px;
+    }
+    .selectLabel {
+        font-size: 0.8rem;
+    }
+    .selectContainer.active .selectLabel {
+        font-size: 0.9rem;
+        top: -10px;
+    }
+    .dropdownItem {
+    padding: 8px 0px;
+}
+}
+

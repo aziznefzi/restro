@@ -1,0 +1,70 @@
+.Home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 0;
+    background: url(../../frontend/image/slider-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: inherit;
+    height: 100vh;
+}
+
+.Home .LogoTitle img{
+   width: 200px;
+}
+
+.Home .content{
+    margin-top: 50px;
+}
+
+.Home .content img{
+    margin: 20px 0;
+    width: 260px;
+}
+
+.Home .content h3{
+    font-size: 2.4rem;
+    background: linear-gradient(45deg, var(--color2), var(--color4));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Home .content p{
+    max-width: 700px;
+    color: #ffffff9e;
+}
+
+.Home .content button{
+    margin-top: 30px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, var(--color2), var(--color4));
+    color: #fff;
+    font-weight: 700;
+    border: 3px solid;
+}
+
+@media(max-width: 860px){
+ .Home {
+    padding: 30px;
+ }
+ .Home .content img{
+    margin: 20px 0;
+    width: 230px;
+}
+.Home .content h3{
+    font-size: 2.1rem;
+}   
+}
+
+@media(max-width: 475px){
+   .Home .LogoTitle img{
+    width: 150px;
+   }
+   .Home .content img{
+    width: 200px;
+}   
+}

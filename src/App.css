@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    transition: .3s ease-in-out;
+    --color1: #0A0A0A;
+    --color2: #8B0000;
+    --color3: #F5F5F5;
+    --color4: #ffab00;
+    --color5: #FFC107;
+    --color6: #D4AF37;
+    --color7: #ffaa001c;
+}
