@@ -1,5 +1,9 @@
 import './App.css'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faFacebook, faTiktok, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Header from './app/header/header'
+
+library.add(faFacebook, faTiktok, faInstagram);
 import Home from './app/Home/Home'
 import PopularDishes from './app/Popular Dishes/PopularDishes'
 import SpecialOffers from './app/Special Offers/SpecialOffers'
