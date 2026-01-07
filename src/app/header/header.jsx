@@ -30,15 +30,15 @@ import { useTranslation } from 'react-i18next';
 
 export default function Header() {
 const NavValue = [
-  {id: 1, icon: <HomeIcon />, name: "Home", Link: ""},
-  {id: 2, icon: <StarIcon />, name: "Popular", Link: ""},
-  {id: 3, icon: <RestaurantMenuIcon />, name: "Menu", Link: ""},
-  {id: 4, icon: <LocalOfferIcon />, name: "Offers", Link: ""},
-  {id: 5, icon: <InfoIcon />, name: "About", Link: ""},
-  {id: 6, icon: <DeliveryDiningIcon />, name: "Delivery", Link: ""},
-  {id: 7, icon: <AccessTimeIcon />, name: "Opening", Link: ""},
-  {id: 8, icon: <LocationOnIcon />, name: "Location", Link: ""},
-  {id: 9, icon: <ContactPageIcon />, name: "Contact", Link: ""},
+  {id: 1, icon: <HomeIcon />, name: "Home", Link: "#Home"},
+  {id: 2, icon: <StarIcon />, name: "Popular", Link: "#Popular"},
+  {id: 3, icon: <LocalOfferIcon />, name: "Offers", Link: "#Offers"},
+  {id: 4, icon: <RestaurantMenuIcon />, name: "Menu", Link: "#Menu"},
+  {id: 5, icon: <InfoIcon />, name: "About", Link: "#About"},
+  {id: 6, icon: <DeliveryDiningIcon />, name: "Delivery", Link: "#Delivery"},
+  {id: 7, icon: <AccessTimeIcon />, name: "Opening", Link: "#Opening"},
+  {id: 8, icon: <LocationOnIcon />, name: "Location", Link: "#Location"},
+  {id: 9, icon: <ContactPageIcon />, name: "Contact", Link: "#Contact"},
 ]
 const {t, i18n} = useTranslation();
 const theme = useTheme();
@@ -56,7 +56,14 @@ useEffect(() => {
 const navHandle = NavValue.map((item) => {
     return(
      <li key={item.id}>
-       <a href={item.Link}>
+       <a
+       onClick={() =>{
+        if(NavOpen){
+          setNavOpen(false)
+        }
+       }
+      }
+       href={item.Link}>
          <div className={Style.navItemContent}>
            <span className={Style.iconSpan}>{item.icon}</span>
            {t(item.name)}

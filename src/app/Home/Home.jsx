@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 export default function Home() {
   const {t} = useTranslation()
   return (
-    <div className={style.Home}>
+    <div id='Home' className={style.Home}>
       <div className={style.LogoTitle}>
         <img src={logo} alt="" />
       </div>

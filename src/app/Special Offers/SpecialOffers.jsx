@@ -58,6 +58,7 @@ const SpecialOffersItem = [
 ]
   return (
     <div 
+    id='Offers'
     style={{backgroundColor: theme.palette.websiteTheme.background.bg3 }}
     className={style.SpecialOffers}>
       <h1>{t("SpecialOffers")}</h1>

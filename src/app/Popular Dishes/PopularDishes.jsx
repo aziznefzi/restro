@@ -45,6 +45,7 @@ const PopularDishesItem = [
 ]
   return (
     <div 
+    id='Popular'
     style={{backgroundColor : theme.palette.websiteTheme.background.bg2}}
     className={`${styled.PopularDishes} ${styled[WebsiteTheme]}`}>
       <h1>{t("PopularDishes")}</h1>

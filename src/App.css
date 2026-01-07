@@ -12,3 +12,7 @@
     --color6: #D4AF37;
     --color7: #ffaa001c;
 }
+
+body{
+    overflow-x: hidden;
+}
