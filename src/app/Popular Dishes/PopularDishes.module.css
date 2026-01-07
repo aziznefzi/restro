@@ -30,10 +30,11 @@
 
 .PopularDishes .PopularDishesContent{
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    margin: 40px 0;
+    margin: 40px;
 }
 
 .PopularDishes .PopularDishesContent .PopularDishesContentItem{
@@ -62,6 +63,30 @@
     color: #AA771C;
     font-size: 20px;
     margin: 10px 0;
+}
+
+.PopularDishes .PopularDishesContent .PopularDishesContentItem .RestaurantIcon{
+    font-size: 1rem;
+    border: 2px solid #BF953F;
+    color: #BF953F;
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.7s ease-in-out;
+}
+
+.PopularDishes.dark .PopularDishesContent .PopularDishesContentItem .RestaurantIcon:hover{
+    color: white;
+    background: #BF953F;
+    border-color: #fff;
+}
+
+.PopularDishes.light .PopularDishesContent .PopularDishesContentItem .RestaurantIcon:hover{
+    color: #000;
+    background: #BF953F;
+    border-color: #000;
 }
 
 @media (max-width: 840px) {

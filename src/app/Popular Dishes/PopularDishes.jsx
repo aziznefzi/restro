@@ -55,14 +55,7 @@ const PopularDishesItem = [
               <div className={styled.PopularDishesContentItem} key={item.id}>
                 <img src={item.image} alt="" />
                 <h2>{item.name}</h2>
-                <RestaurantIcon sx={{fontSize: "0.8rem",
-                border: "2px solid #BF953F",
-                color: "#BF953F",
-                width: "40px",
-                height: "40px",
-                padding: "7px",
-                cursor: "pointer",
-                borderRadius: "50%"}}/>
+                <RestaurantIcon className={styled.RestaurantIcon}/>
               </div>
             )
           })}
