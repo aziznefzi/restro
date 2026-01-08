@@ -1,0 +1,84 @@
+.Gallery {
+    padding: 4rem 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.Gallery h3 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 4rem;
+    background: linear-gradient(45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.content {
+    display: grid;
+    /* تحديد الحجم بين 250 بكسل و 300 بكسل */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    height: 260px; /* جعل الارتفاع موحد */
+    border-radius: 15px; /* بوردر ريديوس خفيف */
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* إطار ذهبي احترافي متناسق مع الموقع */
+    border: 3px solid transparent;
+    background: linear-gradient(var(--item-bg, #1a1a1a), var(--item-bg, #1a1a1a)) padding-box,
+                linear-gradient(45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) border-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* لضمان ملء المساحة دون تشويه */
+    transition: transform 0.6s ease;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(170, 119, 28, 0.4);
+    z-index: 10;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* تأثير لمعان عند التحويم */
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+}
+
+.card:hover::after {
+    left: 125%;
+}
+
+@media (max-width: 600px) {
+    .content {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 15px;
+    }
+    .card {
+        height: 180px;
+    }
+}
