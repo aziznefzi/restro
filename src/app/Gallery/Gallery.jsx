@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 // استيراد كافة الصور من مجلد Gallery
 const imageModules = import.meta.glob("../../frontend/image/Gallery/*.{jpg,png,jpeg}", { eager: true });
-const allImages = Object.values(imageModules).map(module => module.default);
+const allImages = Object.values(imageModules).splice(0, 24).map(module => module.default);
 
 export default function Gallery() {
   const { t } = useTranslation();

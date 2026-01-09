@@ -42,7 +42,6 @@ function App() {
     <AboutUs />
     <Gallery />
     <Chefs />
-    <Testimonials />
     <Delivery />
     <OpeningHours />
     <Location />
