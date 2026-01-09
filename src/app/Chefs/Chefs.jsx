@@ -6,6 +6,7 @@ import chefs from "../../frontend/image/Chefs/Chefs.png"
 import chef1 from "../../frontend/image/Chefs/Chefs-1.png"
 import chef2 from "../../frontend/image/Chefs/Chefs-2.png"
 import chef3 from "../../frontend/image/Chefs/Chefs-3.png"
+import { useTheme } from '@mui/material/styles';
 
 export default function Chefs() {
   const chefsData = [
@@ -26,6 +27,7 @@ export default function Chefs() {
     }
   ]
   const { t } = useTranslation();
+  const theme = useTheme()
   return (
     <div className={style.Chefs}>
       <h3>{t("Chefs")}</h3>
@@ -33,7 +35,7 @@ export default function Chefs() {
       <img src={chefs} alt="Our Master Chefs Team" className={style.mainImage} />
       <div className={style.content}>
         {chefsData.map((chef, index) => (
-          <div key={index} className={style.card}>
+          <div style={{background: theme.palette.websiteTheme.background.bg3}} key={index} className={style.card}>
             <img src={chef.image} alt={chef.name} />
             <h4>{chef.name}</h4>
             <p>{chef.description}</p>

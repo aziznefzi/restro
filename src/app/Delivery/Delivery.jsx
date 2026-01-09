@@ -38,7 +38,7 @@ export default function Delivery() {
     },
   ]
   return (
-    <div className={Style.Delivery}>
+    <div id='Delivery' className={Style.Delivery}>
       {/* SVG Gradient Definition */}
       <svg width="0" height="0" style={{ position: 'absolute' }}>
         <defs>
@@ -70,6 +70,7 @@ export default function Delivery() {
           ))}
         </div>
       </div>
+      <button>{t("Order Now")}</button>
     </div>
   )
 }

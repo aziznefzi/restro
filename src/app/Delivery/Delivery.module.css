@@ -1,6 +1,5 @@
 .Delivery {
-    padding: 100px 0;
-        display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
@@ -99,6 +98,26 @@
     line-height: 1.6;
 }
 
+.Delivery button {
+ padding:10px 20px;   
+ margin-top: 40px;
+ border-radius: 25px;
+ background: linear-gradient(45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+ color: unset;
+ font-size: 20px;
+ font-weight: 900;
+ border: 3px solid;
+}
+
+.Delivery button:hover {
+  transform: translateY(-5px);
+  background: transparent;
+  background: linear-gradient(45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
 @media (max-width: 900px) {
  .Delivery .content .DelevryImage img{
     width: 300px;
@@ -151,5 +170,11 @@
    }
   .Delivery .content .DelevryImage img{
     width: 300px;
+}
+
+.Delivery button {
+ padding: 7px 10px;   
+ font-size: 17px;
+ border: 2px solid;
 }
 }
