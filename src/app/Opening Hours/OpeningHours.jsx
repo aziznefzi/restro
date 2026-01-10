@@ -5,11 +5,11 @@ import iamge from "../../frontend/image/OpeningHours/OpeningHours.png"
 import { useTranslation } from 'react-i18next';
 
 export default function OpeningHours() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <div className={style.OpeningHours}>
      <div className={style.content}>
-      <h3>{t("Restaurant")}<span>{t("Opening Hours")}</span></h3>
+      <h3>{i18n.language === "en" ? t("Restaurant") : t("هاته")}<span>{t("Opening Hours")}</span></h3>
       <p>{t("OpeningHoursText")}</p>
      </div>
      <div className={style.imageContainer}>

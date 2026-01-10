@@ -38,7 +38,7 @@ export default function Chefs() {
           <div style={{background: theme.palette.websiteTheme.background.bg3}} key={index} className={style.card}>
             <img src={chef.image} alt={chef.name} />
             <h4>{chef.name}</h4>
-            <p>{chef.description}</p>
+            <p>{t(chef.description)}</p>
           </div>
         ))}
       </div>
