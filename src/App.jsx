@@ -44,8 +44,6 @@ function App() {
     <Chefs />
     <Delivery />
     <OpeningHours />
-    <Location />
-    <ContactUs />
     <FAQ />
     </ThemeProvider>
     </>
