@@ -13,7 +13,7 @@ export default function FAQ() {
   const { t } = useTranslation();
   const { WebsiteTheme } = useContext(ThemeContext);
   const theme = useTheme();
-
+  const IemBg = {backgroundColor: theme.palette.websiteTheme.background.bg3}
   return (
     <div 
       id='FAQ'
@@ -26,13 +26,17 @@ export default function FAQ() {
       <div className={style.content}>
         <div className={style.locationAndMedia}>
           <div className={style.information}>
-            <div className={style.item}>
+            <div 
+            style={IemBg}
+            className={style.item}>
               <div className={style.iconWrapper}>
                 <AddLocationIcon />
               </div>
               <p>{t("location")}</p>
             </div>
-            <div className={style.item}>
+            <div 
+            style={IemBg}
+            className={style.item}>
               <div className={style.iconWrapper}>
                 <LocalPhoneIcon />
               </div>
@@ -40,7 +44,9 @@ export default function FAQ() {
             </div>
           </div>
           <div className={style.information}>
-            <div className={style.item}>
+            <div 
+            style={IemBg}
+            className={style.item}>
               <div className={style.iconWrapper}>
                 <EmailIcon />
               </div>
