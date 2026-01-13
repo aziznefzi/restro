@@ -96,6 +96,18 @@ const navHandle = NavValue.map((item) => {
 
   const currentLangName = i18n.language === 'en' ? 'English' : 'Arabe';
   const [scrolled, setScrolled] = useState(false); // Added for scrolled state
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
         <div className={`${Style.header} ${Style[WebsiteTheme]} ${scrolled ? Style.scrolled : ""}`}>

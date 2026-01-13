@@ -1,3 +1,10 @@
+/* smooth tranzetion */
+html {
+    scroll-behavior: smooth;
+}
+/* smooth tranzetion */
+
+/* global styles */
 *{
     margin: 0;
     padding: 0;
@@ -12,6 +19,7 @@
     --color6: #D4AF37;
     --color7: #ffaa001c;
 }
+/* global styles */
 
 body{
     overflow-x: hidden;
