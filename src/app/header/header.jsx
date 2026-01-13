@@ -34,11 +34,11 @@ const NavValue = [
   {id: 2, icon: <StarIcon />, name: "Popular", Link: "#Popular"},
   {id: 3, icon: <LocalOfferIcon />, name: "Offers", Link: "#Offers"},
   {id: 4, icon: <InfoIcon />, name: "About", Link: "#About"},
-  {id: 5, icon: <RestaurantMenuIcon />, name: "Menu", Link: "#Menu"},
-  {id: 6, icon: <DeliveryDiningIcon />, name: "Delivery", Link: "#Delivery"},
-  {id: 7, icon: <AccessTimeIcon />, name: "Opening", Link: "#Opening"},
-  {id: 8, icon: <LocationOnIcon />, name: "Location", Link: "#Location"},
-  {id: 9, icon: <ContactPageIcon />, name: "Contact", Link: "#Contact"},
+  {id: 5, icon: <RestaurantMenuIcon />, name: "Gallery", Link: "#Gallery"},
+  {id: 6, icon: <AccessTimeIcon />, name: "Chefs", Link: "#Chefs"},
+  {id: 7, icon: <DeliveryDiningIcon />, name: "Delivery", Link: "#Delivery"},
+  {id: 8, icon: <LocationOnIcon />, name: "Opening Hours", Link: "#Opening-Hours"},
+  {id: 9, icon: <ContactPageIcon />, name: "FAQ", Link: "#FAQ"},
 ]
 const {t, i18n} = useTranslation();
 const theme = useTheme();

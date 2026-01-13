@@ -9,7 +9,9 @@ export default function Gallery() {
   const { t } = useTranslation();
 
   return (
-    <div className={style.Gallery}>
+    <div
+    id="Gallery"
+    className={style.Gallery}>
       <h3>{t("Gallery")}</h3>
       <div className={style.content}>
         {allImages.map((img, index) => (

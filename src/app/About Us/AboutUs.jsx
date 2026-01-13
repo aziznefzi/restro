@@ -10,7 +10,9 @@ export default function AboutUs() {
   const {t} = useTranslation();
   const theme = useTheme();
   return (
-    <div className={`${style.AboutUs} ${style[WebsiteTheme]}`}>
+    <div
+    id='About'
+    className={`${style.AboutUs} ${style[WebsiteTheme]}`}>
        {/* تعريف التدرج الذهبي لمشاركته مع الأيقونات */}
        <svg width="0" height="0" style={{ position: 'absolute' }}>
          <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">

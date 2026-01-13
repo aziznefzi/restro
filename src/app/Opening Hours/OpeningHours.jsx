@@ -7,7 +7,9 @@ import { useTranslation } from 'react-i18next';
 export default function OpeningHours() {
   const { t, i18n } = useTranslation();
   return (
-    <div className={style.OpeningHours}>
+    <div 
+    id='Opening-Hours'
+    className={style.OpeningHours}>
      <div className={style.content}>
       <h3>{i18n.language === "en" ? t("Restaurant") : t("هاته")}<span>{t("Opening Hours")}</span></h3>
       <p>{t("OpeningHoursText")}</p>

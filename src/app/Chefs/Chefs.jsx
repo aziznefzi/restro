@@ -29,7 +29,9 @@ export default function Chefs() {
   const { t } = useTranslation();
   const theme = useTheme()
   return (
-    <div className={style.Chefs}>
+    <div
+    id="Chefs"
+    className={style.Chefs}>
       <h3>{t("Chefs")}</h3>
       <p>{t("ChefsText")}</p>
       <img src={chefs} alt="Our Master Chefs Team" className={style.mainImage} />
